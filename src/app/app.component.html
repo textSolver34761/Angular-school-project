@@ -24,16 +24,49 @@
   </div>
 
 
-<div class="list-group">
-  <li class="list-group-item">My blog</li>
+<!--div class="list-group">
+  <div class="list-group-item">My blog</div>
   <div *ngFor="let item of post">
-    <div [ngClass]="{'green' : toggle, 'red': !toggle}" >
-      TITLE : {{item.title}} <br >
-      CONTENT : {{ item.content }} <br >
-      LIKES : {{ item.loveIts }} <br >
-      DATE : {{ item.created_At }} <br >
+    <!--div [ngClass]="{'green' : toggle, 'red': !toggle}" >
+      <ul>TITLE : {{item.title}} </ul>
+      <ul>CONTENT : {{ item.content }} </ul>
+      <ul>LIKES : {{ item.loveIts }} </ul>
+      <ul>DATE : {{ item.created_At }} </ul>
+    </div-->
+    <!--div [ngStyle]="{'background-color': bgColor}">
+      <ul>TITLE : {{item.title}} </ul>
+      <ul>CONTENT : {{ item.content }} </ul>
+      <ul>LIKES : {{ item.loveIts }} </ul>
+      <ul>DATE : {{ item.created_At }} </ul>
+    </div>
+    <button type="button" class="btn btn-success" (click)="colorGreen()" >Love It!</button>
+    <button type="button" class="btn btn-danger" (click)="colorRed()">Hate it!</button>
   </div>
-    <button type="button" class="btn btn-success" (click)="enableDisableRule()" >Love It!</button>
-    <button type="button" class="btn btn-danger" (click)="enableDisableRule()" >Hate it!</button>
+</div-->
+<li class="list-group-item w-100">
+
+  <div class="card" style="width: 18rem;" [ngStyle]="{'background-color': color()}" *ngFor="let item of post">
+  
+  <div class="card-body">
+  
+  <div class="flex">
+  
+  <h5 class="card-title">{{item.title}}</h5>
+  
+  <span class="ml-a">{{item.created_At }}</span>
+  
   </div>
-</div>
+  
+  <h6 class="card-subtitle mb-2"> ♡ {{item.loveIts}}</h6>
+  
+  <p class="card-text">{{item.content}}</p>
+  
+  <button class="btn btn-success" (click)="loveIt()">Love it </button>
+  
+  <button class="btn btn-danger float-r" (click)="dontLoveIt()">Hate it</button>
+  
+  </div>
+  
+  </div>
+  
+  </li>

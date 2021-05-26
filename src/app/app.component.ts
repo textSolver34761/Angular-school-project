@@ -7,12 +7,41 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  loveIt(){
+    //
+  }
 
-toggle = true;
+  dontLoveIt(){
+    //
+  }
 
-enableDisableRule() {
-  this.toggle = !this.toggle;
+  bgColor = 'red';
+
+colorGreen() {
+  this.bgColor = '#118e4c'.toString();
 }
+
+colorRed(){
+  this.bgColor = '#ac2838'.toString();
+}
+
+color(){
+  
+}
+
+/*
+getColor() {
+  switch (key) {
+    case value:
+      
+      break;
+  
+    default:
+      
+      break;
+  }
+}
+*/
 
 post =
   [
